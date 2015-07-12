@@ -1,0 +1,12 @@
+// ==UserScript==
+// @name        Xerosanyam's script to convert UL to OL
+// @description This script converts all ul tags to ol on GeeksforGeeks.org Domain.
+// @namespace   http://www.geeksforgeeks.org/ul-to-ol
+// @include     http://www.geeksforgeeks.org/*
+// @grant       None
+// @require     http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js
+// ==/UserScript==
+
+$($('.wrapper').find('ul').get().reverse()).each(function(){
+  $(this).replaceWith($('<ol>'+$(this).html()+'</ol>'))
+})
